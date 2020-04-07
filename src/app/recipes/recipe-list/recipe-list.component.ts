@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 import { Recipe } from "../recipe.model";
 
 @Component({
@@ -16,7 +16,13 @@ export class RecipeListComponent {
     new Recipe(
       "Another Test Recipe",
       "This is sooo yummy!",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFYFD4CiAp8OgjotJ2m9J3qgeuzY42tMRDFMxk6fVJowAfH6h_"
+      "https://ichef.bbci.co.uk/food/ic/food_16x9_832/recipes/nachos_92445_16x9.jpg"
     ),
   ];
+
+  @Output() selectedRecipe = new EventEmitter<Recipe>()
+
+  onRecipeSelected(recipe: Recipe) {
+    this.selectedRecipe.emit(recipe);
+  }
 }
