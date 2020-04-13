@@ -3,10 +3,7 @@ import { Injectable } from "@angular/core";
 
 @Injectable({providedIn: 'root'})
 export class ShoppingListService {
-    private ingredients: Ingredient[] = [
-        new Ingredient("Apples", 5),
-        new Ingredient("Tomatoes", 10),
-    ];
+    private ingredients: Ingredient[] = []
 
       getIngredients() {
           return this.ingredients;
@@ -14,5 +11,9 @@ export class ShoppingListService {
 
       addIngredient(ingredient: Ingredient) {
         this.ingredients.push(ingredient);
+      }
+
+      addIngredients(ingredients: Ingredient[]) {
+        ingredients.forEach((ingredient: Ingredient) => this.addIngredient(ingredient));
       }
 }
