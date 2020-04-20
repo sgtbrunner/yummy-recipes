@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
   selector: "app-header",
@@ -6,11 +6,4 @@ import { Component, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./header.component.css"],
 })
 export class HeaderComponent {
-  @Output() routeSelected = new EventEmitter<string>();
-  recipeRoute: string = 'recipes';
-  shoppingListRoute: string = 'shopping-list';
-
-  setRoute(route: string) {
-    this.routeSelected.emit(route);
-  }
 }
