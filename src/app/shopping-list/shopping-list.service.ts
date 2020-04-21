@@ -1,8 +1,11 @@
-import { Ingredient } from "../shared/ingredient.model";
+import { Subject } from "rxjs";
 import { Injectable } from "@angular/core";
+
+import { Ingredient } from "../shared/ingredient.model";
 
 @Injectable({providedIn: 'root'})
 export class ShoppingListService {
+  ingredientsChanged = new Subject<Ingredient[]>();
     private ingredients: Ingredient[] = []
 
       getIngredients() {
@@ -11,9 +14,11 @@ export class ShoppingListService {
 
       addIngredient(ingredient: Ingredient) {
         this.ingredients.push(ingredient);
+        this.ingredientsChanged.next(this.ingredients);
       }
 
       addIngredients(ingredients: Ingredient[]) {
         ingredients.forEach((ingredient: Ingredient) => this.addIngredient(ingredient));
+        this.ingredientsChanged.next(this.ingredients);
       }
 }
