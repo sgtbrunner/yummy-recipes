@@ -5,10 +5,10 @@ import { Recipe } from "./recipe.model";
 import { Ingredient } from "../shared/ingredient.model";
 import { ShoppingListService } from "../shopping-list/shopping-list.service";
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class RecipeService {
   constructor(private readonly shoppingListService: ShoppingListService) {}
-  selectedRecipe = new Subject<Recipe>();
+  recipesChanged = new Subject<Recipe[]>();
     private recipes: Recipe[] = [
         new Recipe(
           "The mighty Shakshuka!",
@@ -55,5 +55,20 @@ export class RecipeService {
 
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
       this.shoppingListService.addIngredients(ingredients);
+    }
+
+    addRecipe(newRecipe: Recipe): void {
+      this.recipes.push(newRecipe);
+      this.recipesChanged.next(this.recipes.slice());
+    }
+
+    updateRecipe(id: number, recipe: Recipe) : void {
+      this.recipes[id] = recipe;
+      this.recipesChanged.next(this.recipes.slice());
+    }
+
+    deleteRecipe(id: number) {
+      this.recipes.splice(id, 1);
+            this.recipesChanged.next(this.recipes.slice());
     }
 }
