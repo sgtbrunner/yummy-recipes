@@ -11,7 +11,7 @@ import { RecipesResolverService } from './recipes/recipes-resolver.service';
 import { AuthComponent } from './auth/auth.component';
 
 export const appRoutes: Routes = [
-    { path: '', redirectTo: '/recipes', pathMatch: 'full' },
+    { path: '', redirectTo: '/authentication', pathMatch: 'full' },
     { path: 'recipes', component: RecipesComponent, children: [
         { path: '', component: RecipeStartComponent },
         { path: 'new', component: RecipeEditComponent },

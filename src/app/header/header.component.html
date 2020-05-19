@@ -1,11 +1,11 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand">Recipe Book</a>
+            <div class="navbar-brand">Recipe Book</div>
         </div>
         <div class="navbar-default">
             <ul class="nav navbar-nav">
-                <li routerLinkActive="active">
+                <li routerLinkActive="active" *ngIf="!isAuthenticated">
                     <a [routerLink]="['/authentication']">Authenticate</a>
                 </li>
                 <li routerLinkActive="active">
@@ -15,8 +15,11 @@
                     <a [routerLink]="['/shopping-list']">Shopping List</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li appDropdown class="dropdown">
+            <ul class="nav navbar-nav navbar-right" *ngIf="isAuthenticated">
+                <li>
+                    <a (click)="onLogout()">Logout</a>
+                </li>
+                <li appDropdown class="dropdown" *ngIf="isAuthenticated">
                     <a class="dropdown-toggle" role="button">
                         Manage <span class="caret"></span>
                     </a>

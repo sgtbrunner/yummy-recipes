@@ -22,7 +22,9 @@ export class DataStorageService {
 
   retrieveRecipes() {
     return this.http
-      .get<Recipe[]>(AppConstants.DATABASE_URL + AppConstants.RECIPES_TABLE)
+      .get<Recipe[]>(
+        AppConstants.DATABASE_URL + AppConstants.RECIPES_TABLE
+      )
       .pipe(
         map(recipes => {
           return recipes.map(recipe => {
@@ -35,6 +37,6 @@ export class DataStorageService {
         tap(recipes => {
           this.recipeService.setRecipes(recipes);
         })
-      )
-    }
+      );
+  }
 }

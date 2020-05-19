@@ -1,3 +1,7 @@
+a {
+    cursor: pointer;
+}
+
 .navbar-brand {
     user-select: none;
 }
