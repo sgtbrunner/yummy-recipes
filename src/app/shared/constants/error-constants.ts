@@ -13,6 +13,6 @@ export class ErrorConstants {
     public static CLIENT_ERROR_OPERATION_NOT_ALLOWED: string = 'This operation is not allowed!';
     public static CLIENT_ERROR_TOO_MANY_ATTEMPTS: string = 'Server unreachable at the moment. Please try again later!';
     public static CLIENT_ERROR_DEFAULT_MESSAGE: string = 'An unknown error occurred!';
-    public static CLIENT_EMAIL_PASSWORD_DONT_MATCH: string = `Email and/or Password provided don't match`;
+    public static USERNAME_ANDOR_PASSWORD_IS_INVALID: string = 'The username and/or password you have entered is invalid.';
     public static CLIENT_USER_DISABLED: string = 'User has been disabled';
 }

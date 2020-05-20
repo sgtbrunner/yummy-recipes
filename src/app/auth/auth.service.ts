@@ -115,7 +115,7 @@ export class AuthService {
           errorMessage = ErrorConstants.CLIENT_ERROR_TOO_MANY_ATTEMPTS;
           break;
         case ErrorConstants.SERVER_EMAIL_NOT_FOUND || ErrorConstants.SERVER_INVALID_PASSWORD:
-          errorMessage = ErrorConstants.CLIENT_EMAIL_PASSWORD_DONT_MATCH;
+          errorMessage = ErrorConstants.USERNAME_ANDOR_PASSWORD_IS_INVALID;
           break;
         case ErrorConstants.SERVER_USER_DISABLED:
           errorMessage = ErrorConstants.CLIENT_USER_DISABLED;
