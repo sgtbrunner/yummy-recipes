@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { AppConstants } from '../shared/constants/app-constants';
-import { AuthResponseData } from './auth-response-data';
-import { catchError, tap } from 'rxjs/operators';
-import { ErrorConstants } from '../shared/constants/error-constants';
-import { throwError, Observable, BehaviorSubject } from 'rxjs';
 import { User } from './user.model';
 import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { catchError, tap } from 'rxjs/operators';
+import { AuthResponseData } from './auth-response-data';
+import { AppConstants } from '../shared/constants/app-constants';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { ErrorConstants } from '../shared/constants/error-constants';
+import { throwError, Observable, BehaviorSubject } from 'rxjs';
+import { environment } from '../../environments/environment'
 
 @Injectable( { providedIn: 'root' } )
 export class AuthService {
@@ -19,7 +20,7 @@ export class AuthService {
   signUp(email: string, password: string): Observable<AuthResponseData> {
     return this.http
     .post<AuthResponseData>(
-      AppConstants.SIGNUP_URL + 'AIzaSyC9I_QnxNa_DMYegh3Mrci4GGvFSmenZLE',
+      AppConstants.SIGNUP_URL + environment.API_KEY,
       {
         email: email,
         password: password,
@@ -37,7 +38,7 @@ export class AuthService {
   login(email: string, password: string): Observable<AuthResponseData> {
     return this.http
     .post<AuthResponseData>(
-      AppConstants.SIGNIN_URL + 'AIzaSyC9I_QnxNa_DMYegh3Mrci4GGvFSmenZLE',
+      AppConstants.SIGNIN_URL + environment.API_KEY,
       {
         email: email,
         password: password,

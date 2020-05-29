@@ -4,5 +4,4 @@ export class AppConstants {
     public static RECIPES_TABLE: string = 'recipes.json';
     public static SIGNUP_URL: string = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
     public static SIGNIN_URL: string = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
-    public static API_KEY: string = '';
 }
