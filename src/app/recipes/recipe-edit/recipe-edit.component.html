@@ -62,7 +62,7 @@
                     <div class="row">
                         <div class="col-xs-12" formArrayName="ingredients">
                             <div
-                                *ngFor="let ingedientControl of recipeForm.get('ingredients').controls; let i = index"
+                                *ngFor="let ingedientControl of ingredientsControl; let i = index"
                                 [formGroupName]="i"
                                 class="row"
                                 id="ingredientList">
@@ -97,7 +97,7 @@
                                     <button 
                                         type="button"
                                         class="btn btn-danger"
-                                        [disabled]="recipeForm.get('ingredients').length === 0"
+                                        [disabled]="ingredientsControl.length === 0"
                                         (click)="onDeleteAllIngredient()">Clear Ingredients</button>
                                 </div>
                             </div>
