@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+/* SPACING */
+.ml-lg {
+    margin-left: 2.5px;
+}
+
+.mr-lg {
+    margin-right: 2.5px;
+}
+
+.mb-lg {
+    margin-bottom: 2.5px;
+}
+
+.mb-xlg {
+    margin-bottom: 5px;
+}
+
+.mt-xlg {
+    margin-top: 5px;
+}
+
+.group-box-1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.group-box-2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
