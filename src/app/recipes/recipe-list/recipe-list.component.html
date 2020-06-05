@@ -1,10 +1,13 @@
-<div class="row">
+<div class="row" *ngIf="userIsLoggedIn">
   <div class="col-xs-12">
-    <button class="btn btn-success"
-    [routerLink]="['/recipes/new']">New Recipe</button>
+    <button 
+      class="btn btn-success" 
+      [routerLink]="['/recipes/new']"
+      >New Recipe
+    </button>
   </div>
+  <hr>
 </div>
-<hr>
 <app-recipe-item
   *ngFor="let recipeElement of recipes; let i = index;"
   [recipe]="recipeElement"

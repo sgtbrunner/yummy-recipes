@@ -5,3 +5,28 @@ img {
 a {
     cursor: pointer;
 }
+
+h5 {
+    white-space: pre-line;
+}
+
+.detail-box {
+    display: flex;
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.invisible-card {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 10px
+}
+
+.far, .fas {
+    font-size: 40px;
+    margin-right: 10px;
+}

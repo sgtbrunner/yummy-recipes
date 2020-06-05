@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 
 import { Recipe } from "../recipe.model";
 import { RecipeService } from "../recipe.service";
+import { AuthService } from "src/app/auth/auth.service";
 
 @Component({
   selector: "app-recipe-detail",
@@ -11,8 +12,11 @@ import { RecipeService } from "../recipe.service";
 })
 export class RecipeDetailComponent implements OnInit {
   constructor(private readonly recipeService: RecipeService,
+              private readonly authenticationService: AuthService,
               private readonly route: ActivatedRoute,
               private readonly router: Router) {}
+  
+  userIsLoggedIn: boolean;            
   recipe: Recipe;
   id: number;
 
@@ -23,6 +27,7 @@ export class RecipeDetailComponent implements OnInit {
         this.recipe = this.recipeService.getRecipe(this.id);
       }
     );
+    this.userIsLoggedIn = this.authenticationService.userIsLoggedIn();
   }
 
   onAddToShoppingList() {

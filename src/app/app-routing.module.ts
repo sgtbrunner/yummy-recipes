@@ -6,8 +6,6 @@ export const appRoutes: Routes = [
     { path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule'},
     { path: 'shopping-list', loadChildren: './shopping-list/shopping-list.module#ShoppingListModule'},
     { path: 'authentication', loadChildren: './auth/auth.module#AuthenticationModule'},
-    // { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
-    // { path: '**', redirectTo: '/not-found' }
 ];
 
 @NgModule({
