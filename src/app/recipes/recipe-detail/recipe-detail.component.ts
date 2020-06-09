@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 
 import { Recipe } from "../recipe.model";
@@ -16,9 +16,9 @@ export class RecipeDetailComponent implements OnInit {
               private readonly route: ActivatedRoute,
               private readonly router: Router) {}
   
-  userIsLoggedIn: boolean;            
-  recipe: Recipe;
   id: number;
+  recipe: Recipe;
+  isAuthenticated: boolean;            
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -27,7 +27,7 @@ export class RecipeDetailComponent implements OnInit {
         this.recipe = this.recipeService.getRecipe(this.id);
       }
     );
-    this.userIsLoggedIn = this.authenticationService.userIsLoggedIn();
+    this.isAuthenticated = this.authenticationService.userIsLoggedIn();
   }
 
   onAddToShoppingList() {

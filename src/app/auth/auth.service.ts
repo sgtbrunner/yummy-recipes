@@ -89,12 +89,15 @@ export class AuthService {
   }
 
   autoLogout(expirationDuration: number) {
-    console.log(expirationDuration);
     this.tokenExpirationTimer = setTimeout(() => this.logout(), expirationDuration);
   }
 
   userIsLoggedIn(): boolean {
     return localStorage.getItem('userData') ? true : false ;
+  }
+
+  retrieveStoredUser(): any {
+    return localStorage.getItem('userData');
   }
 
   private handleAuthentication(email: string, userId: string, token: string, expiresIn: number): void {

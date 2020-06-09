@@ -1,9 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Recipe } from "../recipe.model";
 import { RecipeService } from "../recipe.service";
 import { Subscription } from "rxjs";
 import { Router, ActivatedRoute } from "@angular/router";
-import { AuthService } from "src/app/auth/auth.service";
 
 @Component({
   selector: "app-recipe-list",
@@ -13,12 +12,11 @@ import { AuthService } from "src/app/auth/auth.service";
 export class RecipeListComponent implements OnInit{
   constructor(private readonly recipeService: RecipeService,
               private readonly router: Router,
-              private readonly route: ActivatedRoute,
-              private readonly authenticationService: AuthService ) {}
+              private readonly route: ActivatedRoute) {}
               
   recipes: Recipe[];
   subscription: Subscription;
-  userIsLoggedIn: boolean;
+  @Input() isAuthenticated: boolean;
 
   ngOnInit() {
     this.subscription = this.recipeService.recipesChanged
@@ -28,7 +26,6 @@ export class RecipeListComponent implements OnInit{
         }
       );
     this.recipes = this.recipeService.getRecipes();
-    this.userIsLoggedIn = this.authenticationService.userIsLoggedIn();
   }
 
   onNewRecipe() {
