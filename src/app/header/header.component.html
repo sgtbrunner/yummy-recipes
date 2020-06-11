@@ -1,13 +1,11 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <div class="navbar-brand">Recipe Book</div>
+            <img src="favicon.ico" alt="icon">
+            <div class="navbar-brand">Yummy Recipes</div>
         </div>
         <div class="navbar-default">
             <ul class="nav navbar-nav">
-                <li routerLinkActive="active" *ngIf="!isAuthenticated">
-                    <a [routerLink]="['/authentication']">Authenticate</a>
-                </li>
                 <li routerLinkActive="active">
                     <a [routerLink]="['/recipes']">Recipes</a>
                 </li>
@@ -15,22 +13,18 @@
                     <a [routerLink]="['/shopping-list']">Shopping List</a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right" *ngIf="isAuthenticated">
+            <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a (click)="onLogout()">Logout</a>
-                </li>
-                <li appDropdown class="dropdown" *ngIf="isAuthenticated">
-                    <a class="dropdown-toggle" role="button">
-                        Manage <span class="caret"></span>
+                    <a (click)="onSaveData()" *ngIf="isAuthenticated">
+                        <img src="assets/icons/save.png" alt="save" class="save-icon mr-xlg">
+                        <span>Save Data</span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li (click)="onSaveData()">
-                            <a>Save Data</a>
-                        </li>
-                        <li (click)="onFetchData()">
-                            <a>Fetch Data</a>
-                        </li>
-                    </ul>
+                </li>
+                <li routerLinkActive="active" *ngIf="!isAuthenticated" class="mr-xlg">
+                    <a [routerLink]="['/authentication']">Authenticate</a>
+                </li>
+                <li class="mr-xlg">
+                    <a (click)="onLogout()" *ngIf="isAuthenticated">Logout</a>
                 </li>
             </ul>
         </div>

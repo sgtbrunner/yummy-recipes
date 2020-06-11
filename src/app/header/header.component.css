@@ -2,6 +2,28 @@ a {
     cursor: pointer;
 }
 
-.navbar-brand {
+li > img {
+    width: 16px;
+}
+
+.navbar-header {
     user-select: none;
+    border-right: 1px solid lightgray;
+}
+
+.navbar-header > img {
+    width: 48px;
+    float: left;
+    margin-right: 16px;
+    padding: 4px;
+}
+
+.save-icon {
+    width: 18px;
+}
+
+@media only screen and (max-width: 768px)  {
+    .navbar-header > img {
+        margin-right: 0px;
+    }
 }

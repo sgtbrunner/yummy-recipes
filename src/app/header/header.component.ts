@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   onSaveData() {
-    debugger;
     const storedUserInformation = JSON.parse(this.authenticationService.retrieveStoredUser());
     if (!this.isAuthenticated || storedUserInformation.id === environment.MASTER_USER_ID) {
       this.dataStorageService.storeRecipes();

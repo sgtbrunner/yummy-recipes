@@ -3,23 +3,27 @@
 
 /* SPACING */
 .ml-lg {
-    margin-left: 2.5px;
+    margin-left: 4px;
 }
 
 .mr-lg {
-    margin-right: 2.5px;
+    margin-right: 4px;
+}
+
+.mr-xlg {
+    margin-right: 8px;
 }
 
 .mb-lg {
-    margin-bottom: 2.5px;
+    margin-bottom: 4px;
 }
 
 .mb-xlg {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .mt-xlg {
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .group-box-1 {
