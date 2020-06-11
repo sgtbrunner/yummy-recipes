@@ -1,0 +1,22 @@
+li {
+    cursor: pointer;
+}
+
+li > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn {
+    display: none;
+    font-weight: 700;
+}
+
+li:hover span {
+    display: block;
+}
+
+.text-toggled {
+    text-decoration: line-through;
+}

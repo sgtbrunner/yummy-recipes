@@ -2,15 +2,18 @@
   <div class="col-xs-10">
     <app-shopping-edit></app-shopping-edit>
     <hr />
-    <ul class="list-group">
-      <a
-        class="list-group-item"
-        style="cursor: pointer;"
-        *ngFor="let ingredient of ingredients; let id = index"
-        (click)="onEditItem(id)"
-      >
-      {{ ingredient.name }} ({{ ingredient.amount }})
-      </a>
+    <ul>
+      <li *ngFor="let ingredient of ingredients; let id = index" (click)="onEditItem(id)">
+        <div>
+          <h5 [ngClass]="{'text-toggled' : ingredient.isToggled}">
+            {{ ingredient.amount }}{{ ingredient.unit }} {{ ingredient.name }}
+          </h5>
+          <span class="btn btn-warning" (click)="onToggle(id)">
+            <div *ngIf="!ingredient.isToggled">Done!</div>
+            <div *ngIf="ingredient.isToggled">Undo</div>
+          </span>
+        </div>
+      </li>
     </ul>
   </div>
 </div>
