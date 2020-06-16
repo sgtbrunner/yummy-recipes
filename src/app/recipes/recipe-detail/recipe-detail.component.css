@@ -1,18 +1,41 @@
-img {
-    max-height: 300px;
-}
-
-a {
-    cursor: pointer;
+h1, h3 {
+    margin-top: 10px;
+    font-weight: 600;
 }
 
 h5 {
     white-space: pre-line;
+    font-size: 16px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style-type:none;
+}
+
+li {
+    display: flex;
+}
+
+label {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+button > span {
+    margin-left: 10px;
 }
 
 .detail-box {
     display: flex;
     align-items: center;
+    margin-top: 20px;
 }
 
 .space-between {
@@ -27,6 +50,26 @@ h5 {
 }
 
 .far, .fas {
-    font-size: 40px;
-    margin-right: 10px;
+    font-size: 32px;
+}
+.fa-ellipsis-v, .fa-shopping-bag {
+    font-size: 24px !important;
+}
+
+.dropdown-toggle {
+    background-color: white;
+    border: none;
+}
+.btn-group.open .dropdown-toggle {
+    box-shadow: none;
+}
+
+.btn-outline-secondary {
+    margin-top: 5px;
+    color: #6c757d;
+    border-color: #6c757d;
+    background-image: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
 }

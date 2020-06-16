@@ -6,11 +6,10 @@
     <div appDropdown class="btn-group">
       <button 
         type="button" 
-        class="btn btn-primary dropdown-toggle">
-        Manage Recipe <span class="caret"></span>
+        class="dropdown-toggle">
+        <span class="fas fa-ellipsis-v"></span>
       </button>
-      <ul class="dropdown-menu">
-        <li><a (click)="onAddToShoppingList()">To Shopping List</a></li>
+      <ul class="dropdown-menu pull-right">
         <li><a [routerLink]="['edit']">Edit Recipe</a></li>
         <li><a (click)="onDeleteRecipe()">Delete Recipe</a></li>
       </ul>
@@ -38,18 +37,31 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">
-    <h4>Ingredients:</h4>
+  <div class="col-xs-8">
+    <h3>Ingredients</h3>
     <ul>
       <li *ngFor="let ingredient of recipe.ingredients">
-        <h5>{{ ingredient.amount }}{{ ingredient.unit }} {{ ingredient.name }}</h5>
+        <input type="checkbox" class="form-check-input">
+        <label class="form-check-label">
+          {{ ingredient.amount }} {{ ingredient.unit }} {{ ingredient.name }}
+        </label>
       </li>
     </ul>
+  </div>
+  <div class="col-xs-4">
+    <button 
+      type="button"
+      (click)="onAddToShoppingList()"
+      class="btn btn-outline-secondary pull-right"
+      >
+        <i class="fas fa-shopping-bag"></i>
+        <span>Add to Shopping list</span>
+    </button>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h4>Instructions:</h4>
+    <h3>Instructions</h3>
     <h5 class="test">{{ recipe.instructions }}</h5>
   </div>
 </div>

@@ -1,19 +1,21 @@
-<div class="row">
-  <div class="col-xs-10">
-    <app-shopping-edit></app-shopping-edit>
-    <hr />
-    <ul>
-      <li *ngFor="let ingredient of ingredients; let id = index" (click)="onEditItem(id)">
-        <div>
-          <h5 [ngClass]="{'text-toggled' : ingredient.isToggled}">
-            {{ ingredient.amount }}{{ ingredient.unit }} {{ ingredient.name }}
-          </h5>
-          <span class="btn btn-warning" (click)="onToggle(id)">
-            <div *ngIf="!ingredient.isToggled">Done!</div>
-            <div *ngIf="ingredient.isToggled">Undo</div>
-          </span>
-        </div>
-      </li>
-    </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10">
+      <app-shopping-edit></app-shopping-edit>
+      <hr />
+      <ul>
+        <li *ngFor="let ingredient of ingredients; let id = index" (click)="onEditItem(id)">
+          <div>
+            <h5 [ngClass]="{'text-toggled' : ingredient.isToggled}">
+              {{ ingredient.amount }}{{ ingredient.unit }} {{ ingredient.name }}
+            </h5>
+            <span class="btn btn-warning" (click)="onToggle(id)">
+              <div *ngIf="!ingredient.isToggled">Done!</div>
+              <div *ngIf="ingredient.isToggled">Undo</div>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
