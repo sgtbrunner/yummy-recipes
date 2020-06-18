@@ -1,4 +1,4 @@
-<div class="row detail-box">
+<div class="row invisible-box">
   <div class="col-xs-8">
     <h1>{{ recipe.name }}</h1>
   </div>
@@ -26,14 +26,27 @@
     <img [src]="recipe.imagePath" alt="{{ recipe.name }}">
   </div>
 </div>
-<div class="row detail-box space-between">
-  <div class="text-center invisible-card detail-box">
+<div class="info-card-box">
+  <div class="invisible-card">
     <i class="far fa-clock"></i>
-    <h4><u>Preparation Time:</u> {{ recipe.preparationTime }}</h4>
+    <div>
+      <h5>Preparation Time</h5>
+      <h4><b>{{ recipe.preparationTime }}</b></h4>
+    </div>
   </div>
-  <div class="text-center invisible-card">
+  <div class="invisible-card">
+    <i class="fas fa-user-friends"></i>
+    <div>
+      <h5>Serves</h5>
+      <h4><b>{{ recipe.serves }} person(s)</b></h4>
+    </div>
+  </div>
+  <div class="invisible-card">
     <i class="fas fa-utensils"></i>
-    <h4><u>Serves:</u> {{ recipe.serves }}</h4>
+    <div>
+      <h5>Difficulty</h5>
+      <h4><b>{{ recipe.difficulty }}</b></h4>
+    </div>
   </div>
 </div>
 <div class="row">
@@ -62,6 +75,6 @@
 <div class="row">
   <div class="col-xs-12">
     <h3>Instructions</h3>
-    <h5 class="test">{{ recipe.instructions }}</h5>
+    <h5 class="recipe-text">{{ recipe.instructions }}</h5>
   </div>
 </div>
