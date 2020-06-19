@@ -23,19 +23,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
 
-  onSaveData() {
-    const storedUserInformation = JSON.parse(this.authenticationService.retrieveStoredUser());
-    if (!this.isAuthenticated || storedUserInformation.id === environment.MASTER_USER_ID) {
-      this.dataStorageService.storeRecipes();
-    } else {
-      this.dataStorageService.storeRecipes(storedUserInformation.id);
-    }
-  }
-
-  onFetchData() {
-    this.dataStorageService.retrieveRecipes().subscribe();
-  }
-
   onLogout() {
     this.authenticationService.logout();
   }

@@ -17,12 +17,6 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a (click)="onSaveData()" *ngIf="isAuthenticated">
-                        <img src="assets/icons/save.png" alt="save" class="save-icon mr-xlg">
-                        <span>Save Data</span>
-                    </a>
-                </li>
                 <li routerLinkActive="active" *ngIf="!isAuthenticated" class="mr-xlg">
                     <a [routerLink]="['/authentication']">Authenticate</a>
                 </li>

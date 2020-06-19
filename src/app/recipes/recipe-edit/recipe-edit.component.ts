@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { RecipeService } from '../recipe.service';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/auth/auth.service';
+import { environment } from 'src/environments/environment';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -10,12 +13,15 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 })
 export class RecipeEditComponent implements OnInit {
   id: number;
-  editMode: boolean = false;
   recipeForm: FormGroup;
+  editMode: boolean = false;
+  isAuthenticated: boolean = false;
 
   constructor(private readonly route: ActivatedRoute,
               private readonly router: Router,
-              private readonly recipeService: RecipeService) { }
+              private readonly recipeService: RecipeService,
+              private readonly authenticationService: AuthService,
+              private readonly dataStorageService: DataStorageService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -37,7 +43,17 @@ export class RecipeEditComponent implements OnInit {
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
     }
+    this.onSaveData();
     this.onNavigateAway();
+  }
+
+  onSaveData() {
+    const storedUserInformation = JSON.parse(this.authenticationService.retrieveStoredUser());
+    if (!this.isAuthenticated || storedUserInformation.id === environment.MASTER_USER_ID) {
+      this.dataStorageService.storeRecipes();
+    } else {
+      this.dataStorageService.storeRecipes(storedUserInformation.id);
+    }
   }
 
   onAddIngredient(): void {
