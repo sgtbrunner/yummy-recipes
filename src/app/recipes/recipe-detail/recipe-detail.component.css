@@ -64,6 +64,10 @@ button > span {
     font-size: 24px !important;
 }
 
+.vertical-line {
+    border-left: thick solid #ff0000;
+}
+
 .dropdown-toggle {
     background-color: white;
     border: none;

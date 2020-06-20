@@ -18,7 +18,7 @@ export class ShoppingListService {
       }
 
       addIngredient(ingredient: Ingredient) : void {
-        this.ingredients.push(ingredient);
+        this.ingredients.unshift(ingredient);
         this.ingredientsChanged.next(this.ingredients);
       }
 
