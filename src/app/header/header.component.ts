@@ -3,7 +3,6 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { DataStorageService } from "../shared/data-storage.service";
 import { AuthService } from "../auth/auth.service";
 import { Subscription } from "rxjs";
-import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-header",
