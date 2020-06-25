@@ -10,6 +10,7 @@ import { SharedModule } from "./shared/share.module";
 import { CoreModule } from "./core.module";
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AuthGuard } from "./auth/auth-guard.service";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { environment } from '../environments/environment';
     SharedModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
+  providers:[AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

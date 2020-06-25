@@ -17,7 +17,6 @@ export class DataStorageService {
     return this.http
       .put(AppConstants.DATABASE_URL + table, recipes)
       .subscribe(response => {
-        console.log(response);
       })
   }
 

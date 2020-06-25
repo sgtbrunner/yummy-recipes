@@ -110,7 +110,6 @@ export class AuthService {
 
   private handleError(errorRes: HttpErrorResponse): Observable<never> {
     let errorMessage: string;
-    console.log(errorRes);
     if(errorRes.error || errorRes.error.error) {
       switch(errorRes.error.error.message) {
         case ErrorConstants.SERVER_ERROR_EMAIL_EXISTS:
@@ -122,7 +121,10 @@ export class AuthService {
         case ErrorConstants.SERVER_ERROR_TOO_MANY_ATTEMPTS:
           errorMessage = ErrorConstants.CLIENT_ERROR_TOO_MANY_ATTEMPTS;
           break;
-        case ErrorConstants.SERVER_EMAIL_NOT_FOUND || ErrorConstants.SERVER_INVALID_PASSWORD:
+        case ErrorConstants.SERVER_EMAIL_NOT_FOUND:
+          errorMessage = ErrorConstants.USERNAME_ANDOR_PASSWORD_IS_INVALID;
+          break;
+        case ErrorConstants.SERVER_INVALID_PASSWORD:
           errorMessage = ErrorConstants.USERNAME_ANDOR_PASSWORD_IS_INVALID;
           break;
         case ErrorConstants.SERVER_USER_DISABLED:
