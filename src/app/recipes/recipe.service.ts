@@ -20,7 +20,7 @@ export class RecipeService {
     this.recipesChanged.next(this.recipes.slice());
   }
 
-  unsetRecipe(): void {
+  unsetRecipes(): void {
     this.recipes = [];
     this.recipesChanged.next(this.recipes.slice());
   }

@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 
-import { DataStorageService } from "../shared/data-storage.service";
 import { AuthService } from "../auth/auth.service";
 import { Subscription } from "rxjs";
 
@@ -10,8 +9,7 @@ import { Subscription } from "rxjs";
   styleUrls: ["./header.component.css"],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  constructor(private readonly dataStorageService: DataStorageService,
-              private readonly authenticationService: AuthService) {}
+  constructor(private readonly authenticationService: AuthService) {}
   
   isAuthenticated: boolean = false;
   private userSub: Subscription;

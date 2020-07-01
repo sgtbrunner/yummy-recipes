@@ -5,6 +5,7 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/auth/auth.service';
 import { environment } from 'src/environments/environment';
 import { DataStorageService } from 'src/app/shared/data-storage.service';
+import { ErrorConstants } from 'src/app/shared/constants/error-constants';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -15,6 +16,7 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   recipeForm: FormGroup;
   editMode: boolean = false;
+  error: string = null;
   isAuthenticated: boolean = false;
 
   constructor(private readonly route: ActivatedRoute,
@@ -44,15 +46,22 @@ export class RecipeEditComponent implements OnInit {
       this.recipeService.addRecipe(this.recipeForm.value);
     }
     this.onSaveData();
-    this.onNavigateAway();
   }
 
-  onSaveData() {
+  onSaveData(): void {
     const storedUserInformation = JSON.parse(this.authenticationService.retrieveStoredUser());
     if (!this.isAuthenticated || storedUserInformation.id === environment.MASTER_USER_ID) {
-      this.dataStorageService.storeRecipes();
+      this.dataStorageService.storeRecipes()
+        .subscribe(
+          success => this.onNavigateAway(),
+          error => this.error = ErrorConstants.CLIENT_ERROR_DEFAULT_MESSAGE
+        );
     } else {
-      this.dataStorageService.storeRecipes(storedUserInformation.id);
+      this.dataStorageService.storeRecipes(storedUserInformation.id)
+        .subscribe(
+          success => this.onNavigateAway(),
+          error => this.error = ErrorConstants.CLIENT_ERROR_DEFAULT_MESSAGE      
+        );
     }
   }
 
@@ -126,4 +135,7 @@ export class RecipeEditComponent implements OnInit {
     })
   }
 
+  onHandleError() {
+    this.error = null;
+  }
 }

@@ -16,8 +16,6 @@ export class DataStorageService {
     const recipes = this.recipeService.getRecipes();
     return this.http
       .put(AppConstants.DATABASE_URL + table, recipes)
-      .subscribe(response => {
-      })
   }
 
   retrieveRecipes(id?: string) {

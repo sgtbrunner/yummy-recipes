@@ -8,10 +8,12 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ErrorConstants } from '../shared/constants/error-constants';
 import { throwError, Observable, BehaviorSubject } from 'rxjs';
 import { environment } from '../../environments/environment'
+import { RecipeService } from '../recipes/recipe.service';
 
 @Injectable( { providedIn: 'root' } )
 export class AuthService {
-  constructor(private readonly http: HttpClient,
+  constructor(private readonly recipeService: RecipeService,
+              private readonly http: HttpClient,
               private readonly router: Router) { }
 
   user = new BehaviorSubject<User>(null);
@@ -36,6 +38,7 @@ export class AuthService {
   }
 
   login(email: string, password: string): Observable<AuthResponseData> {
+    this.recipeService.unsetRecipes();
     return this.http
     .post<AuthResponseData>(
       AppConstants.SIGNIN_URL + environment.API_KEY,
@@ -79,6 +82,7 @@ export class AuthService {
   }
 
   logout(): void {
+    this.recipeService.unsetRecipes();
     this.user.next(null);
     this.router.navigate(['/authentication']);
     localStorage.removeItem('userData');

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { DataStorageService } from "../shared/data-storage.service";
 import { AuthService } from "../auth/auth.service";
 import { environment } from "src/environments/environment";
@@ -10,7 +10,7 @@ import { RecipeService } from "./recipe.service";
   styleUrls: ["./recipes.component.css"]
 })
 
-export class RecipesComponent implements OnInit, OnDestroy {
+export class RecipesComponent implements OnInit {
   constructor(private readonly authenticationService: AuthService,
               private readonly recipeService: RecipeService,
               private readonly dataStorageService: DataStorageService) {}
@@ -21,14 +21,17 @@ export class RecipesComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.isAuthenticated = this.authenticationService.userIsLoggedIn();
     this.storedUserInformation = JSON.parse(this.authenticationService.retrieveStoredUser());
-    if(!this.isAuthenticated || this.storedUserInformation.id === environment.MASTER_USER_ID) {
-      this.dataStorageService.retrieveRecipes().subscribe();
-    } else {
-      this.dataStorageService.retrieveRecipes(this.storedUserInformation.id).subscribe();
+    const recipesLoaded = this.checkRecipes();
+    if(!recipesLoaded) {
+      if(!this.isAuthenticated || this.storedUserInformation.id === environment.MASTER_USER_ID) {
+        this.dataStorageService.retrieveRecipes().subscribe();
+      } else {
+        this.dataStorageService.retrieveRecipes(this.storedUserInformation.id).subscribe();
+      }
     }
   }
 
-  ngOnDestroy() {
-    this.recipeService.unsetRecipe();
+  checkRecipes(): boolean {
+    return !!this.recipeService.getRecipes().length;
   }
 }
