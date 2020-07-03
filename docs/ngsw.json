@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1593775251966,
+  "timestamp": 1593775968118,
   "index": "https://sgtbrunner.github.io/yummy-recipes/index.html",
   "assetGroups": [
     {
@@ -111,7 +111,7 @@
     "https://sgtbrunner.github.io/yummy-recipes/glyphicons-halflings-regular.5be1347c682810f199c7.eot": "86b6f62b7853e67d3e635f6512a5a5efc58ea3c3",
     "https://sgtbrunner.github.io/yummy-recipes/glyphicons-halflings-regular.82b1212e45a2bc35dd73.woff": "278e49a86e634da6f2a02f3b47dd9d2a8f26210f",
     "https://sgtbrunner.github.io/yummy-recipes/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2": "ca35b697d99cae4d1b60f2d60fcd37771987eb07",
-    "https://sgtbrunner.github.io/yummy-recipes/index.html": "92b7213d54c866a7c76c798fe2bec963754b24f9",
+    "https://sgtbrunner.github.io/yummy-recipes/index.html": "e9e776b8c017e91f7fd7732bc5e940ef37fa6171",
     "https://sgtbrunner.github.io/yummy-recipes/main.c91327f10f48514eb9c1.js": "088217a9c37fae7fcd645f03dbe64f197322b247",
     "https://sgtbrunner.github.io/yummy-recipes/manifest.webmanifest": "616526205eee9edae663b8b267550616418cd820",
     "https://sgtbrunner.github.io/yummy-recipes/polyfills-es5.7a29474b8e79d6543acc.js": "2dedcf0a41755727951d16f4e99e18ad5068eaba",
