@@ -1,0 +1,140 @@
+{
+  "configVersion": 1,
+  "timestamp": 1593777299667,
+  "index": "/yummy-recipes/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/yummy-recipes/1.fab9c84a31bae0e80a2e.js",
+        "/yummy-recipes/7.c44b6ff2e05d2daac3f6.js",
+        "/yummy-recipes/8.552df7b9bb2eb2c97ad2.js",
+        "/yummy-recipes/9.3f2ce52558e6929adf6b.js",
+        "/yummy-recipes/common.3ba609f5f1f0444dde76.js",
+        "/yummy-recipes/favicon.ico",
+        "/yummy-recipes/index.html",
+        "/yummy-recipes/main.c91327f10f48514eb9c1.js",
+        "/yummy-recipes/manifest.webmanifest",
+        "/yummy-recipes/polyfills-es5.7a29474b8e79d6543acc.js",
+        "/yummy-recipes/polyfills.8a0091b33b20be37bac0.js",
+        "/yummy-recipes/runtime.0eae0bf2c086f8ae27be.js",
+        "/yummy-recipes/styles.10815600692e1d4d66bd.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/yummy-recipes/assets/icons/icon-128x128.png",
+        "/yummy-recipes/assets/icons/icon-144x144.png",
+        "/yummy-recipes/assets/icons/icon-152x152.png",
+        "/yummy-recipes/assets/icons/icon-192x192.png",
+        "/yummy-recipes/assets/icons/icon-384x384.png",
+        "/yummy-recipes/assets/icons/icon-512x512.png",
+        "/yummy-recipes/assets/icons/icon-72x72.png",
+        "/yummy-recipes/assets/icons/icon-96x96.png",
+        "/yummy-recipes/assets/icons/save.png",
+        "/yummy-recipes/fa-brands-400.31015e861aeb30ff8355.woff2",
+        "/yummy-recipes/fa-brands-400.3c45c98f6f6c1b009c08.svg",
+        "/yummy-recipes/fa-brands-400.5818bbd07dfd7095920a.ttf",
+        "/yummy-recipes/fa-brands-400.607a77859353c0cc1882.eot",
+        "/yummy-recipes/fa-brands-400.ee26f57bc9e3619b022b.woff",
+        "/yummy-recipes/fa-regular-400.0747be4cba2f8600544f.eot",
+        "/yummy-recipes/fa-regular-400.8b892b7904a39e37c53d.woff",
+        "/yummy-recipes/fa-regular-400.ab47faeab8ddc5f809ec.svg",
+        "/yummy-recipes/fa-regular-400.c3146b3524e97475c094.ttf",
+        "/yummy-recipes/fa-regular-400.c52405129ae48097815d.woff2",
+        "/yummy-recipes/fa-solid-900.18df003f90a7f1313b98.svg",
+        "/yummy-recipes/fa-solid-900.32267f3b4db33a7c85ee.ttf",
+        "/yummy-recipes/fa-solid-900.7eefe04dc985dd4ad38b.eot",
+        "/yummy-recipes/fa-solid-900.9451d5fee89b51a20f8a.woff2",
+        "/yummy-recipes/fa-solid-900.a940d584750708f5435c.woff",
+        "/yummy-recipes/glyphicons-halflings-regular.060b2710bdbbe3dfe48b.svg",
+        "/yummy-recipes/glyphicons-halflings-regular.4692b9ec53fd5972caa2.ttf",
+        "/yummy-recipes/glyphicons-halflings-regular.5be1347c682810f199c7.eot",
+        "/yummy-recipes/glyphicons-halflings-regular.82b1212e45a2bc35dd73.woff",
+        "/yummy-recipes/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "database",
+      "patterns": [
+        "https:\\/\\/ng-recipe-app-backend\\.firebaseio\\.com\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 5,
+      "maxAge": 3600000,
+      "timeoutMs": 10000,
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/yummy-recipes/1.fab9c84a31bae0e80a2e.js": "71f84ace531b8b13be674cd8b75e52a594cf0d4a",
+    "/yummy-recipes/7.c44b6ff2e05d2daac3f6.js": "4d8d704c73deec90ce5b936c0130bdd7bfca0a6c",
+    "/yummy-recipes/8.552df7b9bb2eb2c97ad2.js": "1fe04d872642cd28f7327afd45973f630a4a7237",
+    "/yummy-recipes/9.3f2ce52558e6929adf6b.js": "e53d87dcf0250ff50085f60b97a9df1e8234e44f",
+    "/yummy-recipes/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/yummy-recipes/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/yummy-recipes/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/yummy-recipes/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/yummy-recipes/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/yummy-recipes/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/yummy-recipes/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/yummy-recipes/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/yummy-recipes/assets/icons/save.png": "68389d3d533cb516cf50b832de7956ca4397e087",
+    "/yummy-recipes/common.3ba609f5f1f0444dde76.js": "82ee648782a18ebbc8bfd41502a20cbee2d2eb70",
+    "/yummy-recipes/fa-brands-400.31015e861aeb30ff8355.woff2": "509988477da79c146cb93fb728405f18e923c2de",
+    "/yummy-recipes/fa-brands-400.3c45c98f6f6c1b009c08.svg": "d49c07aef6414916b3c6860b42b906e39748e842",
+    "/yummy-recipes/fa-brands-400.5818bbd07dfd7095920a.ttf": "66c86edfd13e63e0e981ce853335c28bc2d20cec",
+    "/yummy-recipes/fa-brands-400.607a77859353c0cc1882.eot": "a17db2a5a355befd089bb6e7d53c3d501bf9e827",
+    "/yummy-recipes/fa-brands-400.ee26f57bc9e3619b022b.woff": "8436788e76679c0485b62c80eb7512c6c2e34e88",
+    "/yummy-recipes/fa-regular-400.0747be4cba2f8600544f.eot": "6299f0e32575f73d8d897f87ce899827f99e20fe",
+    "/yummy-recipes/fa-regular-400.8b892b7904a39e37c53d.woff": "8469cb3d9c8189fea64f60aef2753509d770b8df",
+    "/yummy-recipes/fa-regular-400.ab47faeab8ddc5f809ec.svg": "3372e92825af3975013cece2390f806023b1b05d",
+    "/yummy-recipes/fa-regular-400.c3146b3524e97475c094.ttf": "00f569f7d8ac2497a43b25dc4d3b32213bcea31b",
+    "/yummy-recipes/fa-regular-400.c52405129ae48097815d.woff2": "260bb01acd44d88dcb7f501a238ab968f86bef9e",
+    "/yummy-recipes/fa-solid-900.18df003f90a7f1313b98.svg": "a4115fd7ce47ed2b41f7d4e9e7448f28ba3f7508",
+    "/yummy-recipes/fa-solid-900.32267f3b4db33a7c85ee.ttf": "ff8f37dfad105796bd924d0db0d37a4ff252618c",
+    "/yummy-recipes/fa-solid-900.7eefe04dc985dd4ad38b.eot": "5be5944a17e8b32589a12fdc2b8a8570c9081db4",
+    "/yummy-recipes/fa-solid-900.9451d5fee89b51a20f8a.woff2": "75a88815c47a249eadb5f0edc1675957f860cca7",
+    "/yummy-recipes/fa-solid-900.a940d584750708f5435c.woff": "15c52209092ce0fb7210e40e2a01acc8b4a5c494",
+    "/yummy-recipes/favicon.ico": "795d9aa5eb2adbe94e84b64871f8888f895c830e",
+    "/yummy-recipes/glyphicons-halflings-regular.060b2710bdbbe3dfe48b.svg": "de51a8494180a6db074af2dee2383f0a363c5b08",
+    "/yummy-recipes/glyphicons-halflings-regular.4692b9ec53fd5972caa2.ttf": "44bc1850f570972267b169ae18f1cb06b611ffa2",
+    "/yummy-recipes/glyphicons-halflings-regular.5be1347c682810f199c7.eot": "86b6f62b7853e67d3e635f6512a5a5efc58ea3c3",
+    "/yummy-recipes/glyphicons-halflings-regular.82b1212e45a2bc35dd73.woff": "278e49a86e634da6f2a02f3b47dd9d2a8f26210f",
+    "/yummy-recipes/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2": "ca35b697d99cae4d1b60f2d60fcd37771987eb07",
+    "/yummy-recipes/index.html": "22d04556b2b33a7f54679b903e44ab200ede149b",
+    "/yummy-recipes/main.c91327f10f48514eb9c1.js": "088217a9c37fae7fcd645f03dbe64f197322b247",
+    "/yummy-recipes/manifest.webmanifest": "616526205eee9edae663b8b267550616418cd820",
+    "/yummy-recipes/polyfills-es5.7a29474b8e79d6543acc.js": "2dedcf0a41755727951d16f4e99e18ad5068eaba",
+    "/yummy-recipes/polyfills.8a0091b33b20be37bac0.js": "72d28f9ea09edeb5b094a5398e1f99367afbb71e",
+    "/yummy-recipes/runtime.0eae0bf2c086f8ae27be.js": "a6399f30d62c6b94855a223746206c5ede2da921",
+    "/yummy-recipes/styles.10815600692e1d4d66bd.css": "21cb0f451fc803cd1da26e6c4683767dc446ad3e"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
