@@ -47,6 +47,11 @@ button > span {
     background-color: blanchedalmond;
 }
 
+.far, .fas {
+    font-size: 32px;
+    align-self: center;
+}
+
 .invisible-card {
     display: flex;
     flex-direction: row;
@@ -54,16 +59,25 @@ button > span {
     margin: 0;
 }
 
-.far, .fas {
-    font-size: 32px;
-    align-self: center;
+@media screen and (max-width: 991px) {
+    .invisible-card {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .invisible-card > div {
+        text-align: center;
+    }
 }
 
-.invisible-card > .fas {
-    margin-right: 15px;
+@media screen and (min-width: 991px) {
+    .invisible-card > .fas,
+    .invisible-card > .far {
+        margin-right: 15px;
+    }
 }
 
-.fa-ellipsis-v, .fa-shopping-bag {
+.fa-shopping-bag, .fa-cog {
     font-size: 24px !important;
 }
 
@@ -73,15 +87,11 @@ button > span {
 
 .dropdown-toggle {
     background-color: white;
-    border: none;
-}
-
-.btn-group > .dropdown-toggle {
-    padding-right: 0;
-}
-
-.btn-group.open .dropdown-toggle {
     box-shadow: none;
+}
+
+.btn-group {
+    display: block;
 }
 
 .btn-outline-secondary {

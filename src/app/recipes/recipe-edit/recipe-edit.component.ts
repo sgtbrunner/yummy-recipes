@@ -94,7 +94,7 @@ export class RecipeEditComponent implements OnInit {
     let recipeDescription = '';
     let recipeImagePath = '';
     let recipePreparationTime = '';
-    let recipeServes = 0;
+    let recipeServes = null;
     let recipeIngredients = new FormArray([]);
     let recipeInstructions = '';
     let recipeDifficulty = '';

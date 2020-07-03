@@ -1,5 +1,6 @@
 input.ng-invalid.ng-touched,
-textarea.ng-invalid.ng-touched {
+textarea.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
     border: 1px solid red;
 }
 
@@ -14,6 +15,13 @@ img {
 
 hr {
     border: 1px solid #eee;
+}
+
+.edit {
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .box {

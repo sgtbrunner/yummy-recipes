@@ -6,6 +6,7 @@ import { RecipeService } from "../recipe.service";
 import { AuthService } from "src/app/auth/auth.service";
 import { environment } from "src/environments/environment";
 import { DataStorageService } from "src/app/shared/data-storage.service";
+import { ErrorConstants } from "src/app/shared/constants/error-constants";
 
 @Component({
   selector: "app-recipe-detail",
@@ -21,6 +22,7 @@ export class RecipeDetailComponent implements OnInit {
   
   id: number;
   recipe: Recipe;
+  error: string = null;
   isAuthenticated: boolean;            
 
   ngOnInit() {
@@ -38,17 +40,36 @@ export class RecipeDetailComponent implements OnInit {
   }
 
   onDeleteRecipe() {
-    this.recipeService.deleteRecipe(this.id);
-    this.onSaveData();
-    this.router.navigate(['/recipes']);
+    if(confirm("Are you sure you want to delete this recipe?")) {
+      this.recipeService.deleteRecipe(this.id);
+      this.onSaveData();
+    }
   }
 
-  onSaveData() {
+  onSaveData(): void {
     const storedUserInformation = JSON.parse(this.authenticationService.retrieveStoredUser());
     if (!this.isAuthenticated || storedUserInformation.id === environment.MASTER_USER_ID) {
-      this.dataStorageService.storeRecipes();
+      this.dataStorageService.storeRecipes()
+        .subscribe(
+          success => this.router.navigate(['/recipes']),
+          error => { 
+            this.error = ErrorConstants.CLIENT_ERROR_TOO_MANY_ATTEMPTS,
+            this.dataStorageService.retrieveRecipes().subscribe();
+          }
+      );
     } else {
-      this.dataStorageService.storeRecipes(storedUserInformation.id);
+      this.dataStorageService.storeRecipes(storedUserInformation.id)
+        .subscribe(
+          success => this.router.navigate(['/recipes']),
+          error => { 
+            this.error = ErrorConstants.CLIENT_ERROR_TOO_MANY_ATTEMPTS,
+            this.dataStorageService.retrieveRecipes().subscribe(storedUserInformation.id)
+          }
+      )
     }
+  }
+
+  onHandleError() {
+    this.error = null;
   }
 }

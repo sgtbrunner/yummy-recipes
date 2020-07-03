@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     overflow-x: hidden;
+    margin-bottom: 40px;
 }
 
 /* POSITIONING */
@@ -57,3 +58,7 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+input[type=checkbox]:checked + label.strikethrough{
+    text-decoration: line-through;
+  }
