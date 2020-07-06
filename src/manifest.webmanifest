@@ -1,8 +1,8 @@
 {
-  "name": "recipe-app",
-  "short_name": "recipe-app",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Yummy Recipes",
+  "short_name": "Yummy Recipes",
+  "theme_color": "lightgray",
+  "background_color": "transparent",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
