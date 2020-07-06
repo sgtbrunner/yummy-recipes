@@ -1,27 +1,38 @@
-# MyFirstApp
+# Yummy Recipes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+The ultimate recipe app is finally here!
+Yummy Recipes can help you out with either your favourite recipes or your loved shopping list.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+NPM installed<br>
+If you are running the app on a local server, you will need to:
+A Firebase account (if you don't have one already) up and running
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+On terminal:
+1. Run `git clone https://github.com/sgtbrunner/yummy-recipes.git`
+2. Run `cd yummy-recipes`
+3. Run `npm install`
+4. Replace DATABASE_URL and RECIPES_TABLE constants in the src/app/shared/constants/app-constants.ts file with your own Database URL and Recipe Table file name respectively
+5. Create files environment.ts and environment.prod.ts in src/environments folder. In both files, place the following code:
+   export const environment = {
+      production: false (true if file is environment.prod.ts),
+      API_KEY: '',
+      MASTER_USER_ID: ''
+   };
+6. Fill in API_KEY and MASTER_USER_ID with your own API KEY and ADMIN LOGIN respectively.
+7. Run `npm start`
 
-## Build
+## Built With
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* HTML
+* CSS
+* Typescript
+* Angular 9
+* Firebase
 
-## Running unit tests
+## Authors
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* **Guilherme Brunner** - *Initial work* - [sgtbrunner](https://github.com/sgtbrunner)
