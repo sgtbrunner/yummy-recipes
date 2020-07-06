@@ -31,3 +31,9 @@ hr {
 .header {
     margin-left: 5px;
 }
+
+@media screen and (max-width: 500px) {
+    .form-group label {
+        font-size: 12px;
+    }
+ }

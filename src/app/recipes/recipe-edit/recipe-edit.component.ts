@@ -54,13 +54,13 @@ export class RecipeEditComponent implements OnInit {
       this.dataStorageService.storeRecipes()
         .subscribe(
           success => this.onNavigateAway(),
-          error => this.error = ErrorConstants.CLIENT_ERROR_DEFAULT_MESSAGE
+          error => this.error = ErrorConstants.CLIENT_ERROR_TOO_MANY_ATTEMPTS
         );
     } else {
       this.dataStorageService.storeRecipes(storedUserInformation.id)
         .subscribe(
           success => this.onNavigateAway(),
-          error => this.error = ErrorConstants.CLIENT_ERROR_DEFAULT_MESSAGE      
+          error => this.error = ErrorConstants.CLIENT_ERROR_TOO_MANY_ATTEMPTS      
         );
     }
   }

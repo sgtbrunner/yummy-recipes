@@ -33,7 +33,7 @@ button > span {
 
 .invisible-box {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 20px;
 }
 
@@ -50,6 +50,7 @@ button > span {
 .far, .fas {
     font-size: 32px;
     align-self: center;
+    color: black;
 }
 
 .invisible-card {
@@ -59,35 +60,12 @@ button > span {
     margin: 0;
 }
 
-@media screen and (max-width: 991px) {
-    .invisible-card {
-        flex-direction: column;
-        margin-top: 10px;
-    }
-
-    .invisible-card > div {
-        text-align: center;
-    }
-}
-
-@media screen and (min-width: 991px) {
-    .invisible-card > .fas,
-    .invisible-card > .far {
-        margin-right: 15px;
-    }
-}
-
-.fa-shopping-bag, .fa-cog {
-    font-size: 24px !important;
+.fa-shopping-bag {
+    font-size: 24px;
 }
 
 .vertical-line {
     border-left: thick solid #ff0000;
-}
-
-.dropdown-toggle {
-    background-color: white;
-    box-shadow: none;
 }
 
 .btn-group {
@@ -104,7 +82,54 @@ button > span {
     align-items: center;
 }
 
+.dropdown-toggle {
+    box-shadow: none;
+    padding-right: 0;
+    background-color: white;
+    border-color: transparent ;
+}
+
 .recipe-text {
     white-space: pre-line;
     font-size: 16px;
+}
+
+@media screen and (min-width: 991px) {
+    .invisible-card > .fas,
+    .invisible-card > .far {
+        margin-right: 15px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .invisible-card {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .invisible-card > div {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .invisible-card h4 {
+        font-size: 14px;
+    }
+
+    .invisible-card h5 {
+        font-size: 12px;
+    }
+    
+    .far, .fas {
+        font-size: 24px;
+    }
+
+    .btn {
+        font-size: 12px;
+    }
+
+    .fa-shopping-bag {
+        font-size: 16px;
+    }
 }
