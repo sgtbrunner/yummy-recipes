@@ -5,9 +5,8 @@ Yummy Recipes can help you out with either your favourite recipes or your loved 
 
 ## Prerequisites
 
-NPM installed<br>
-If you are running the app on a local server, you will need to:
-A Firebase account (if you don't have one already) up and running
+* NPM installed<br>
+* A Firebase account (if you don't have one already) up and running
 
 ## Getting Started
 
