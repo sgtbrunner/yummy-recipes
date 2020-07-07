@@ -3,6 +3,10 @@ body {
     margin-bottom: 40px;
 }
 
+ul {
+    padding-left: 0;
+}
+
 .overflow-x-hidden {
     overflow-x: hidden;
 }

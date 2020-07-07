@@ -1,7 +1,7 @@
 {
   "name": "Yummy Recipes",
   "short_name": "Yummy Recipes",
-  "theme_color": "lightgray",
+  "theme_color": "white",
   "background_color": "transparent",
   "display": "standalone",
   "scope": "./",

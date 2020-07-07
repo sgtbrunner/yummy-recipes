@@ -6,6 +6,13 @@ button {
   margin: 5px;
 }
 
+.form-signin {
+  width: 100%;
+  max-width: 340px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
 .help-block {
   color: red;
 }
